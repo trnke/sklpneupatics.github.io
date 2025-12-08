@@ -1,515 +1,166 @@
-<!DOCTYPE HTML>
-<!--
-	
-	https://html5up.net/dimension
--->
-<html>
-	<head>
-		<title>SKL PNEUMATICS</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="#{page.title}">SKL Pneumatics - Tyre Store</title>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Bootstrap 5 CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"
+    >
+		<link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<img src="images/tocak_2.svg" alt="Logo" class="responsive-logo">
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>SKL Pneumatics </h1>
-								<p>Naša osnovna delatnost je prodaja svih vrsta guma za putnička, teretna i poljoprivredna vozila, kao i za industrijske i građevinske mašine.</br>
-									Firma SKL Pneumatics osnovana je u aprilu 2025. godine u Novom Sadu kao preduzetnička radnja.</br>
-									
-									SKL Pneumatics vrši promet guma najpoznatijih svetskih proizvođača na teritorije Republike Srbije.</br> 
-									Brendove koje izdvajamo:</p>
-									
-									<p><span style="font-size: 25px; font-weight:bold; color: red;">TAURUS</span> – guma grupacije Michelin, proizvedena u Srbiji.</p>
-									<h4><span style="font-size: 25px; font-weight:bold; color: red;">MATADOR</span> – brend nemačke kompanije CONTINENTAL.</h4>
-									<h4><span style="font-size: 25px; font-weight:bold; color: red;">BKT</span> – renomirani proizvođač poljoprivrednih i industrijskih guma iz Indije.</h4>
-									<h4><span style="font-size: 25px; font-weight:bold; color: red;">APOLLO</span> – teretni pneumatici evropskog porekla sa bezuslovnom garancijom na 
-										oštećenja nastala tokom eksploatacije.</h4>
-									<break></break>
-				
-								
-								
-							</div>
-							<div><p>Zahvaljujući izuzetnom odnosu cene i kvaliteta nudimo širok spektar brendova i 
-									profila na tržištu Srbije u prodaji guma za poljoprivredne i industrijske mašine.</p>
+</head>
+<body>
 
-								<h4> <span style="color: blue; font-size: 25px;">ASORTIMAN GUMA</span></h4>	</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#putnicka">putnička</a></li>
-								<li><a href="#teretna">teretna</a></li>
-								<li><a href="#poljoprivredna">poljoprivredna</a></li>
-								<li><a href="#industrija">industrija</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+<div class="container-fluid layout-wrapper d-flex flex-column p-0">
 
-				<!-- Main -->
-					<div id="main">
+    <!-- Header -->
+    <header class="bg-white py-5 text-center position-relative">
+		<h1 class="h2 mb-2 position-relative" th:text="#{header.title}">SKL Pneumatics - Prodavnica guma</h1>
+		<p class="text-muted mb-0 fs-5 position-relative" th:text="#{header.subtitle}">Kvalitetne gume i profesionalna usluga</p>
+    </header>
 
-					
+	<!-- Content area -->
+	<div class="flex-grow-1">
 
-						<!-- putnicka -->
-							<article id="putnicka">
-								<h1>GUME ZA PUTNIČKA VOZILA</h1>
-
-								<div class="categories">
-									<!-- Budget -->
-									<div class="category">
-									<h2>Budget</h2>
-									<div class="brand">
-										<img src="images/matador.svg" alt="Matador">
-									</div>
-									<div class="brand">
-										<img src="images/sava.svg" alt="Sava">
-									</div>
-									</div>
-
-									<!-- Quality -->
-									<div class="category">
-									<h2>Quality</h2>
-									<div class="brand">
-										<img src="images/kleber.svg" alt="Kleber">
-									</div>
-									<div class="brand">
-										<img src="images/hankook.svg" alt="Hankook">
-									</div>
-									<div class="brand">
-										<img src="images/fulda.svg" alt="Fulda">
-									</div>
-									</div>
-
-									<!-- Premium -->
-									<div class="category">
-									<h2>Premium</h2>
-									<div class="brand">
-										<img src="images/continental.svg" alt="Continental">
-									</div>
-									<div class="brand">
-										<img src="images/vredestein.svg" alt="Vredestein">
-									</div>
-									<div class="brand">
-										<img src="images/michellin.svg" alt="Michelin">
-									</div>
-									<div class="brand">
-										<img src="images/dunlop.svg" alt="Dunlop">
-									</div>
-									<div class="brand">
-										<img src="images/goodyear.svg" alt="Goodyear">
-									</div>
-									</div>
-								</div>
-							</article>
-
-						<!-- teretna -->
-						<article id="teretna">
-							<h1>GUME ZA TERETNA VOZILA</h1>
-
-							<div class="categories">
-								<!-- Budget -->
-								<div class="category">
-								<h2>Budget</h2>
-								<div class="brand">
-									<img src="images/matador.svg" alt="Matador">
-								</div>
-								<div class="brand">
-									<img src="images/sava.svg" alt="Sava">
-								</div>
-								</div>
-
-								<!-- Quality -->
-								<div class="category">
-								<h2>Quality</h2>
-								<div class="brand">
-									<img src="images/apollo.svg" alt="Kleber">
-								</div>
-								<div class="brand">
-									<img src="images/fulda.svg" alt="Fulda">
-								</div>
-								</div>
-
-								<!-- Premium -->
-								<div class="category">
-								<h2>Premium</h2>
-								<div class="brand">
-									<img src="images/continental.svg" alt="Continental">
-								</div>								
-								<div class="brand">
-									<img src="images/michellin.svg" alt="Michelin">
-								</div>
-								<div class="brand">
-									<img src="images/dunlop.svg" alt="Dunlop">
-								</div>
-								<div class="brand">
-									<img src="images/goodyear.svg" alt="Goodyear">
-								</div>
-								</div>
-							</div>
-						</article>
-
-						<!-- poljoprivredna -->
-						<article id="poljoprivredna">
-							<h1>GUME ZA POLJOPRIVREDNA VOZILA</h1>
-
-							<div class="categories">
-								<!-- Budget -->
-								<div class="category">
-								<h2>Budget</h2>
-								
-								</div>
-
-								<!-- Quality -->
-								<div class="category">
-								<h2>Quality</h2>
-								<div class="brand">
-									<img src="images/bkt.svg" alt="Continental">
-								</div>
-								</div>
-
-								<!-- Premium -->
-								<div class="category">
-								<h2>Premium</h2>
-							
-								</div>
-							</div>
-						</article>
-						
-
-						<!-- industrija -->
-						<article id="industrija">
-							<h1>GUME ZA INDUSTRIJSKA VOZILA</h1>
-
-							<div class="categories">
-								<!-- Budget -->
-								<div class="category">
-								<h2>Budget</h2>
-								
-								</div>
-
-								<!-- Quality -->
-								<div class="category">
-								<h2>Quality</h2>
-								<div class="brand">
-									<img src="images/bkt.svg" alt="Continental">
-								</div>
-								</div>
-
-								<!-- Premium -->
-								<div class="category">
-								<h2>Premium</h2>
-								
-								</div>
-							</div>
-						</article>
-
-
-						
-							<article id="kontakt">
-								<h2 class="major">industrija</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Ime i prezime</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Poruka</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Posalji poruku" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright"><a href="#kontakt">KONTAKT</a> <a href="mailto:sklpneumatics@gmail.com">POSALJI EMAIL: sklpneumatics@gmail.com</a> 
-							<br>
-							<a href="tel:+381601619209">TELEFON: +381601619209</a>
-							<a href="#"></a></p>
-					</footer>
-
+		<!-- Horizontal menu below header -->
+		<nav class="bg-white border-bottom">
+			<div class="container">
+				<ul class="nav nav-pills justify-content-center py-2">
+					<li class="nav-item"><a class="nav-link" href="#">Početna</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Gume</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Usluge</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Promocije</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Kontakt</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">O nama</a></li>
+				</ul>
 			</div>
+		</nav>
 
-		<!-- BG -->
-			<div id="bg"></div>
+		<!-- Glavni sadržaj -->
+		<main class="flex-grow-1 p-4">
+			<div class="container-fluid">
+			<div class="row g-4">
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://kit.fontawesome.com/7f827e0cc6.js" crossorigin="anonymous"></script>
+				<!-- Sekcija dobrodošlice -->
+				<div class="col-12">
+				<div class="card border-0 shadow-sm">
+					<div class="card-body">
+					<h2 class="h4 card-title" th:text="#{welcome.title}">Dobrodošli u SKL Pneumatics</h2>
+					<p class="card-text" th:text="#{welcome.description}">
+						Vaš pouzdani partner za kvalitetne gume i profesionalne usluge vulkanizacije.
+						Nudimo gume za automobile, SUV-e, kamione, motocikle i industrijska vozila.
+					</p>
+					<p class="card-text mb-0" th:text="#{welcome.cta}">
+						Pregledajte našu ponudu guma, rezervirajte montažu i balansiranje, ili kontaktirajte naš tim
+						za stručne savete prilagođene vašem vozilu i stilu vožnje.
+					</p>
+					</div>
+				</div>
+				</div>
 
-	</body>
+				<!-- Primeri sekcija / kartice -->
+				<div class="col-md-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+								<h3 class="h5 card-title" th:text="#{services.title}">Naše usluge</h3>
+                                <ul class="mb-0">
+									<li th:text="#{services.item1}">Prodaja guma & montaža</li>
+									<li th:text="#{services.item2}">Balansiranje & poravnanje točkova</li>
+									<li th:text="#{services.item3}">Sezonska promena guma (zima/leto)</li>
+									<li th:text="#{services.item4}">Popravka & pregled guma</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+								<h3 class="h5 card-title" th:text="#{why.title}">Zašto se nama poveriti?</h3>
+                                <ul class="mb-0">
+									<li th:text="#{why.item1}">Širok izbor premium i ekonomičnih marki</li>
+									<li th:text="#{why.item2}">Profesionalna i brza usluga</li>
+									<li th:text="#{why.item3}">Konkurentne cene</li>
+									<li th:text="#{why.item4}">Ljubazno i iskusno osoblje</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- /row -->
+            </div> <!-- /container-fluid -->
+        </main>
+    </div>
+
+	<!-- Categories / Cards -->
+	<section class="container-fluid py-5 bg-light">
+		<div class="container">
+			<h3 class="h4 mb-4">Kategorije guma</h3>
+			<div class="row g-4">
+				<div class="col-6 col-md-3">
+					<div class="card h-100 border-0 shadow-sm">
+						<img th:src="@{/images/car.png}" src="/images/car.png" class="card-img-top" alt="Gume za putnička vozila" loading="lazy">
+						<div class="card-body">
+							<h5 class="card-title">Gume za putnička vozila</h5>
+							<p class="card-text small">Kvalitetne i sigurne gume za svakodnevnu vožnju.</p>
+							<a href="#" class="btn btn-sm btn-primary">Pogledaj</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-md-3">
+					<div class="card h-100 border-0 shadow-sm">
+						<img th:src="@{/images/truck.jpg}" src="/images/truck.jpg" class="card-img-top" alt="Gume za teretna vozila" loading="lazy">
+						<div class="card-body">
+							<h5 class="card-title">Gume za teretna vozila</h5>
+							<p class="card-text small">Robusne gume dizajnirane za teret i dugotrajnost.</p>
+							<a href="#" class="btn btn-sm btn-primary">Pogledaj</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-md-3">
+					<div class="card h-100 border-0 shadow-sm">
+						<img th:src="@{/images/traktor.jpg}" src="/images/traktor.jpg" class="card-img-top" alt="Gume za poljoprivredne mašine" loading="lazy">
+						<div class="card-body">
+							<h5 class="card-title">Gume za poljoprivredne mašine</h5>
+							<p class="card-text small">Specijalne gume za traktore i poljoprivrednu opremu.</p>
+							<a href="#" class="btn btn-sm btn-primary">Pogledaj</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-md-3">
+					<div class="card h-100 border-0 shadow-sm">
+						<img th:src="@{/images/teška masinerija.jpg}" src="/images/teška masinerija.jpg" class="card-img-top" alt="Gume za industrijske mašine" loading="lazy">
+						<div class="card-body">
+							<h5 class="card-title">Gume za industrijske mašine</h5>
+							<p class="card-text small">Tvrde i izdržljive gume za industrijske primene.</p>
+							<a href="#" class="btn btn-sm btn-primary">Pogledaj</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="bg-white text-center py-5 mt-auto">
+		<small class="text-muted fs-6" th:text="#{footer.copyright}">
+			© 2025 SKL Pneumatics – All rights reserved.
+		</small>
+	</footer>
+</div>
+
+<!-- Bootstrap 5 JS (optional, for components that need JS) -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+></script>
+
+</body>
 </html>
