@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKL Pneumatics - Kontakt</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+</head>
+<body>
+
+<div class="container-fluid layout-wrapper d-flex flex-column p-0">
+
+    <header class="bg-white py-5 text-center position-relative">
+        <h1 class="h2 mb-2 position-relative">SKL Pneumatics - Prodavnica guma</h1>
+        <p class="text-muted mb-0 fs-5 position-relative">Kvalitetne gume i profesionalna usluga</p>
+    </header>
+
+    <nav class="bg-white border-bottom">
+        <div class="container">
+            <ul class="nav nav-pills justify-content-center py-2">
+                <li class="nav-item"><a class="nav-link" href="index.html">Početna</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Usluge</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Promocije</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Kontakt</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">O nama</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="flex-grow-1 p-4 contact-main">
+        <section class="container px-0 px-md-3 py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="contact-card p-5 shadow-sm">
+                        <h2 class="h3 contact-title mb-1">Pišite nam:</h2>
+                        <div class="contact-accent mb-4"></div>
+                        <p class="text-muted contact-intro">
+                            Pošaljite poruku sa opisom pitanja, rezervacije ili tehničkog zahteva, a naš tim će vam odgovoriti u najkraćem roku.
+                        </p>
+
+                        <form
+                            class="contact-form row g-3 mt-1"
+                            method="POST"
+                            action="https://formsubmit.co/sklpneumatics@gmail.com"
+                            autocomplete="on"
+                        >
+                            <input type="hidden" name="_subject" value="Poruka sa sajta SKL Pneumatics">
+                            <input type="hidden" name="_language" value="sr">
+                            <input type="hidden" name="_next" value="https://sklpneupatics.github.io/contact.html?thanks=1">
+                            <input type="hidden" name="_captcha" value="false">
+
+                            <div class="col-md-6">
+                                <label for="senderName" class="form-label text-muted small">Ime *</label>
+                                <input
+                                    id="senderName"
+                                    name="name"
+                                    type="text"
+                                    class="form-control contact-input"
+                                    placeholder="Unesite svoje ime"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label for="senderEmail" class="form-label text-muted small">Vaš mejl *</label>
+                                <input
+                                    id="senderEmail"
+                                    name="email"
+                                    type="email"
+                                    class="form-control contact-input"
+                                    placeholder="primer@domen.com"
+                                    required
+                                >
+                            </div>
+                            <div class="col-12">
+                                <label for="subject" class="form-label text-muted small">Naslov</label>
+                                <input
+                                    id="subject"
+                                    name="subject"
+                                    type="text"
+                                    class="form-control contact-input"
+                                    placeholder="Naslov poruke"
+                                >
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label text-muted small">Vaša poruka</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    class="form-control contact-input"
+                                    rows="6"
+                                    placeholder="Opišite problem, zahtev ili termin koji želite da rezervišete."
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="row g-3 align-items-center">
+                                    <div class="col-auto">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="humanCheck">
+                                            <label class="form-check-label text-muted small" for="humanCheck">
+                                                Nisam robot
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="contact-honey" class="visually-hidden">Ako niste robot ostavite prazno</label>
+                                <input
+                                    id="contact-honey"
+                                    name="_honey"
+                                    type="text"
+                                    class="form-control contact-honey"
+                                    autocomplete="off"
+                                    tabindex="-1"
+                                >
+                            </div>
+
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-danger btn-lg px-5 contact-submit">
+                                    Pošalji
+                                </button>
+                            </div>
+
+                            <div class="col-12">
+                                <p class="contact-privacy text-center mb-0">
+                                    Pravilnik o zaštiti podataka o ličnosti možete pogledati
+                                    <a href="#" class="fw-semibold">ovde</a>.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white text-center py-5 mt-auto border-top">
+        <small class="text-muted fs-6">
+            © 2025 SKL Pneumatics — All rights reserved.
+        </small>
+    </footer>
+</div>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.querySelector('.contact-form');
+        if (!form) {
+            return;
+        }
+        form.addEventListener('submit', function (event) {
+            var honey = document.getElementById('contact-honey');
+            if (honey && honey.value.trim() !== '') {
+                event.preventDefault();
+                alert('Neželjeni unos je otkriven. Molimo pokušajte ponovo.');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
