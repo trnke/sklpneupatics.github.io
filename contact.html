@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +26,7 @@
     <nav class="bg-white border-bottom">
         <div class="container">
             <ul class="nav nav-pills justify-content-center py-2">
-                <li class="nav-item"><a class="nav-link" href="index.html">Početna</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">PoÄŤetna</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Usluge</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Promocije</a></li>
                 <li class="nav-item"><a class="nav-link active" href="contact.html">Kontakt</a></li>
@@ -40,22 +40,20 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="contact-card p-5 shadow-sm">
-                        <h2 class="h3 contact-title mb-1">Pišite nam:</h2>
+                        <h2 class="h3 contact-title mb-1">PiĹˇite nam:</h2>
                         <div class="contact-accent mb-4"></div>
                         <p class="text-muted contact-intro">
-                            Pošaljite poruku sa opisom pitanja, rezervacije ili tehničkog zahteva, a naš tim će vam odgovoriti u najkraćem roku.
+                            PoĹˇaljite poruku sa opisom pitanja, rezervacije ili tehniÄŤkog zahteva, a naĹˇ tim Ä‡e vam odgovoriti u najkraÄ‡em roku.
                         </p>
 
                         <form
+                            id="contactForm"
                             class="contact-form row g-3 mt-1"
                             method="POST"
-                            action="https://formsubmit.co/sklpneumatics@gmail.com"
                             autocomplete="on"
+                            data-endpoint="/api/postmark-contact"
                         >
-                            <input type="hidden" name="_subject" value="Poruka sa sajta SKL Pneumatics">
-                            <input type="hidden" name="_language" value="sr">
                             <input type="hidden" name="_next" value="https://sklpneupatics.github.io/contact.html?thanks=1">
-                            <input type="hidden" name="_captcha" value="false">
 
                             <div class="col-md-6">
                                 <label for="senderName" class="form-label text-muted small">Ime *</label>
@@ -69,7 +67,7 @@
                                 >
                             </div>
                             <div class="col-md-6">
-                                <label for="senderEmail" class="form-label text-muted small">Vaš mejl *</label>
+                                <label for="senderEmail" class="form-label text-muted small">VaĹˇ mejl *</label>
                                 <input
                                     id="senderEmail"
                                     name="email"
@@ -79,6 +77,10 @@
                                     required
                                 >
                             </div>
+                            <div class="col-12 text-center mt-3">
+                                <p id="contact-status" class="contact-status small text-muted mb-0" aria-live="polite"></p>
+                            </div>
+
                             <div class="col-12">
                                 <label for="subject" class="form-label text-muted small">Naslov</label>
                                 <input
@@ -90,13 +92,13 @@
                                 >
                             </div>
                             <div class="col-12">
-                                <label for="message" class="form-label text-muted small">Vaša poruka</label>
+                                <label for="message" class="form-label text-muted small">VaĹˇa poruka</label>
                                 <textarea
                                     id="message"
                                     name="message"
                                     class="form-control contact-input"
                                     rows="6"
-                                    placeholder="Opišite problem, zahtev ili termin koji želite da rezervišete."
+                                    placeholder="OpiĹˇite problem, zahtev ili termin koji Ĺľelite da rezerviĹˇete."
                                     required
                                 ></textarea>
                             </div>
@@ -128,13 +130,13 @@
 
                             <div class="col-12 text-center mt-4">
                                 <button type="submit" class="btn btn-danger btn-lg px-5 contact-submit">
-                                    Pošalji
+                                    PoĹˇalji
                                 </button>
                             </div>
 
                             <div class="col-12">
                                 <p class="contact-privacy text-center mb-0">
-                                    Pravilnik o zaštiti podataka o ličnosti možete pogledati
+                                    Pravilnik o zaĹˇtiti podataka o liÄŤnosti moĹľete pogledati
                                     <a href="#" class="fw-semibold">ovde</a>.
                                 </p>
                             </div>
@@ -147,7 +149,7 @@
 
     <footer class="bg-white text-center py-5 mt-auto border-top">
         <small class="text-muted fs-6">
-            © 2025 SKL Pneumatics — All rights reserved.
+            Â© 2025 SKL Pneumatics â€” All rights reserved.
         </small>
     </footer>
 </div>
@@ -160,19 +162,103 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var form = document.querySelector('.contact-form');
+        var form = document.getElementById('contactForm');
         if (!form) {
             return;
         }
+
+        var statusNode = document.getElementById('contact-status');
+        var submitButton = form.querySelector('[type="submit"]');
+        var endpoint = form.dataset.endpoint || '/api/postmark-contact';
+        var redirectInput = form.querySelector('[name="_next"]');
+
+        function setStatus(message, isError) {
+            if (!statusNode) {
+                return;
+            }
+            statusNode.textContent = message || '';
+            statusNode.classList.toggle('text-success', !isError && !!message);
+            statusNode.classList.toggle('text-danger', !!isError);
+        }
+
         form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
             var honey = document.getElementById('contact-honey');
             if (honey && honey.value.trim() !== '') {
-                event.preventDefault();
-                alert('Neželjeni unos je otkriven. Molimo pokušajte ponovo.');
+                setStatus('Nezeljeni unos je otkriven.', true);
+                return;
             }
+
+            var humanCheck = document.getElementById('humanCheck');
+            if (humanCheck && !humanCheck.checked) {
+                setStatus('Molimo potvrdite da niste robot.', true);
+                return;
+            }
+
+            var name = (document.getElementById('senderName').value || '').trim();
+            var email = (document.getElementById('senderEmail').value || '').trim();
+            var subject = (document.getElementById('subject').value || '').trim() || 'Poruka sa sajta SKL Pneumatics';
+            var message = (document.getElementById('message').value || '').trim();
+
+            if (!name || !email || !message) {
+                setStatus('Popunite ime, mejl i poruku pre slanja.', true);
+                return;
+            }
+
+            var payload = {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            };
+
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.dataset.originalLabel = submitButton.textContent;
+                submitButton.textContent = 'Saljem...';
+            }
+
+            setStatus('Saljem poruku...', false);
+
+            fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error('Mrezni zahtev nije uspeo');
+                    }
+                    return response.json().catch(function () {
+                        return {};
+                    });
+                })
+                .then(function () {
+                    setStatus('Poruka je poslata. Hvala na kontaktiranju!', false);
+                    form.reset();
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = submitButton.dataset.originalLabel || 'Posalji';
+                    }
+                    if (redirectInput && redirectInput.value) {
+                        window.location.href = redirectInput.value;
+                    }
+                })
+                .catch(function (error) {
+                    console.error('Postmark submission failed', error);
+                    setStatus('Doslo je do greske. Pokusajte ponovo kasnije.', true);
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = submitButton.dataset.originalLabel || 'Posalji';
+                    }
+                });
         });
     });
 </script>
 
 </body>
 </html>
+
