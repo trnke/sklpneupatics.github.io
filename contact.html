@@ -13,6 +13,7 @@
     >
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/contact.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -104,29 +105,10 @@
                             </div>
 
                             <div class="col-12">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-auto">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="humanCheck">
-                                            <label class="form-check-label text-muted small" for="humanCheck">
-                                                Nisam robot
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="g-recaptcha" data-sitekey="6LeLVSosAAAAADk0tJsgGLxTwtWM7z3WPuiz7eCs"></div>
                             </div>
 
-                            <div class="col-12">
-                                <label for="contact-honey" class="visually-hidden">Ako niste robot ostavite prazno</label>
-                                <input
-                                    id="contact-honey"
-                                    name="_honey"
-                                    type="text"
-                                    class="form-control contact-honey"
-                                    autocomplete="off"
-                                    tabindex="-1"
-                                >
-                            </div>
+                            
 
                             <div class="col-12 text-center mt-4">
                                 <button type="submit" class="btn btn-danger btn-lg px-5 contact-submit">

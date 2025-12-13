@@ -21,15 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        var honey = document.getElementById('contact-honey');
-        if (honey && honey.value.trim() !== '') {
-            setStatus('Nezeljeni unos je otkriven.', true);
-            return;
-        }
 
-        var humanCheck = document.getElementById('humanCheck');
-        if (humanCheck && !humanCheck.checked) {
-            setStatus('Molimo potvrdite da niste robot.', true);
+        var recaptchaToken = window.grecaptcha ? window.grecaptcha.getResponse() : '';
+        if (!recaptchaToken) {
+            setStatus('Molimo potvrditi reCAPTCHA proveru.', true);
             return;
         }
 
@@ -47,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
             name: name,
             email: email,
             subject: subject,
-            message: message
+            message: message,
+            recaptchaToken: recaptchaToken
         };
 
         if (submitButton) {
@@ -76,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(function () {
                 setStatus('Poruka je poslata. Hvala na kontaktiranju!', false);
                 form.reset();
+                if (window.grecaptcha) { window.grecaptcha.reset(); }
                 if (submitButton) {
                     submitButton.disabled = false;
                     submitButton.textContent = submitButton.dataset.originalLabel || 'Posalji';
