@@ -52,7 +52,7 @@
                             class="contact-form row g-3 mt-1"
                             method="POST"
                             autocomplete="on"
-                            data-endpoint="/api/postmark-contact"
+                            action="https://formspree.io/f/xdkqbwqb"
                         >
                             <input type="hidden" name="_next" value="https://sklpneupatics.github.io/contact.html?thanks=1">
 
@@ -105,13 +105,18 @@
                             </div>
 
                             <div class="col-12">
-                                <div class="g-recaptcha" data-sitekey="6LeLVSosAAAAADk0tJsgGLxTwtWM7z3WPuiz7eCs"></div>
+                                <div
+                                    class="g-recaptcha"
+                                    data-sitekey="6LeLVSosAAAAADk0tJsgGLxTwtWM7z3WPuiz7eCs"
+                                    data-callback="onCaptchaSuccess"
+                                    data-expired-callback="onCaptchaExpired"
+                                    data-error-callback="onCaptchaError"
+                                ></div>
+                                <small id="recaptcha-help" class="text-danger d-none">Morate potvrditi reCAPTCHA pre slanja.</small>
                             </div>
 
-                            
-
                             <div class="col-12 text-center mt-4">
-                                <button type="submit" class="btn btn-danger btn-lg px-5 contact-submit">
+                                <button type="submit" class="btn btn-danger btn-lg px-5 contact-submit" disabled>
                                     Pošalji
                                 </button>
                             </div>
