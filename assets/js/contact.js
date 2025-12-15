@@ -10,6 +10,50 @@ document.addEventListener('DOMContentLoaded', function () {
     var redirectInput = form.querySelector('[name="_next"]');
     var recaptchaHelp = document.getElementById('recaptcha-help');
 
+    // Show a visible thank-you banner if the URL has ?thanks=1 (or true)
+    (function showThankYouBannerIfNeeded() {
+        try {
+            var url = new URL(window.location.href);
+            var thanks = (url.searchParams.get('thanks') || '').toLowerCase();
+            if (thanks === '1' || thanks === 'true' || thanks === 'yes') {
+                var card = document.querySelector('.contact-card');
+                if (card) {
+                    var alert = document.createElement('div');
+                    alert.className = 'alert alert-success alert-dismissible fade show mb-4';
+                    alert.setAttribute('role', 'alert');
+                    alert.innerHTML = '<strong>Hvala!</strong> Vaša poruka je uspešno poslata. Odgovorićemo u najkraćem roku.' +
+                        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+                    card.insertBefore(alert, card.firstChild);
+
+                    // Auto-dismiss after 5 seconds using Bootstrap if available, else fallback
+                    setTimeout(function () {
+                        try {
+                            if (window.bootstrap && window.bootstrap.Alert) {
+                                var bsAlert = window.bootstrap.Alert.getOrCreateInstance(alert);
+                                bsAlert.close();
+                            } else {
+                                // Fallback: remove with fade-out
+                                alert.classList.remove('show');
+                                alert.addEventListener('transitionend', function () {
+                                    if (alert && alert.parentNode) alert.parentNode.removeChild(alert);
+                                }, { once: true });
+                            }
+                        } catch (e) {
+                            if (alert && alert.parentNode) alert.parentNode.removeChild(alert);
+                        }
+                    }, 5000);
+                }
+                // Clean the URL so refresh/share does not keep the flag
+                url.searchParams.delete('thanks');
+                if (window.history && window.history.replaceState) {
+                    window.history.replaceState(null, '', url.pathname + (url.search ? '?' + url.searchParams.toString() : '') + url.hash);
+                }
+            }
+        } catch (e) {
+            // no-op if URL API unavailable
+        }
+    })();
+
     function setStatus(message, isError) {
         if (!statusNode) {
             return;
