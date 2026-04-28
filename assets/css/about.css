@@ -140,11 +140,31 @@ nav .nav-link:hover {
     }
 }
 
+.bonitet-banner {
+    padding-inline: 1rem;
+}
+
 .bonitet-banner img {
+    display: block;
+    width: min(100%, 600px);
+    height: auto;
+    margin-inline: auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .bonitet-banner img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 575.98px) {
+    .bonitet-banner.my-5 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 0 !important;
+        padding-inline: 0.75rem;
+    }
+
+    .bonitet-banner img:hover {
+        transform: none;
+    }
 }

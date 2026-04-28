@@ -6,13 +6,9 @@ body {
     min-height: 100vh;
 }
 
-
 header {
     border-bottom: 1px solid #dee2e6;
-    background-repeat: repeat;
-    background-attachment: fixed;
     background-color: #ffffff;
-    background-size: auto;
     opacity: 0.95;
 }
 
@@ -20,7 +16,6 @@ footer {
     border-top: 1px solid #dee2e6;
 }
 
-/* Menu button hover effect - blue translucent */
 nav .nav-link {
     transition: all 0.3s ease;
     color: #343a40 !important;
@@ -34,7 +29,6 @@ nav .nav-link:hover {
     transform: scale(1.05);
 }
 
-/* Card hover effect - responsive with larger bold text */
 .card {
     transition: all 0.3s ease;
 }
@@ -42,55 +36,6 @@ nav .nav-link:hover {
 .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15) !important;
-}
-
-.card:hover .card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #000 !important;
-}
-
-.card:hover .card-text {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #000 !important;
-}
-
-.card:hover .card-body li {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #000;
-}
-
-/* Responsive adjustment */
-@media (max-width: 767.98px) {
-    .sidebar.p-3 {
-        min-width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #dee2e6;
-    }
-}
-
-.sidebar.p-3 {
-    min-width: 220px;
-    background-color: #e9ecef;
-    border-right: 1px solid #dee2e6;
-
-    /* Stretch to fill vertical space inside the flex container */
-    align-self: stretch;
-    height: 100%;
-    overflow-y: auto;
-}
-
-@media (max-width: 767.98px) {
-    .sidebar.p-3 {
-        min-width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #dee2e6;
-
-        position: static; /* default behavior on mobile */
-        height: auto; /* let content define height on small devices */
-    }
 }
 
 .bonitet-banner {
@@ -121,4 +66,3 @@ nav .nav-link:hover {
         transform: none;
     }
 }
-
