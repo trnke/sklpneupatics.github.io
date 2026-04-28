@@ -1,0 +1,103 @@
+body {
+    background-color: #fff;
+}
+
+.contact-main {
+    background-color: #f6f7fb;
+}
+
+.contact-card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 1.25rem;
+    min-height: 70vh;
+}
+
+.contact-title {
+    font-weight: 600;
+}
+
+.contact-accent {
+    width: 60px;
+    height: 4px;
+    background: #ff2d2d;
+    border-radius: 999px;
+}
+
+.contact-intro {
+    max-width: 640px;
+}
+
+.contact-form .form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #cfd4da;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: #ff2d2d;
+    box-shadow: 0 0 0 0.2rem rgba(255, 45, 45, 0.25);
+}
+
+.contact-recaptcha {
+    min-height: 72px;
+    border: 1px solid #d9dfe8;
+    border-radius: 0.75rem;
+    background: #fbfbfb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+}
+
+.contact-submit {
+    background-color: #ff2d2d;
+    border: none;
+    border-radius: 0.65rem;
+    box-shadow: 0 8px 18px rgba(255, 45, 45, 0.35);
+}
+
+.contact-submit:hover {
+    background-color: #e02529;
+}
+
+.contact-privacy {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.contact-privacy a {
+    color: #e02d2d;
+    text-decoration: none;
+}
+
+.contact-privacy a:hover {
+    text-decoration: underline;
+}
+
+.form-check-input {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.contact-honey {
+    display: block;
+    visibility: hidden;
+    pointer-events: none;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}

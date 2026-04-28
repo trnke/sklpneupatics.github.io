@@ -1,0 +1,141 @@
+/* Card hover effect */
+.card {
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Card text hover effect */
+.card-text {
+    transition: color 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+    color: #666;
+}
+
+.card:hover .card-text {
+    color: #000;
+    font-weight: bold;
+}
+
+/* Card title hover effect */
+.card-title {
+    transition: color 0.3s ease-in-out;
+}
+
+.card:hover .card-title {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* Menu button hover effect - blue translucent */
+nav .nav-link {
+    transition: all 0.3s ease;
+    color: #343a40 !important;
+    border-radius: 0.5rem;
+}
+
+nav .nav-link:hover {
+    background-color: rgba(13, 110, 253, 0.2);
+    color: #0d6efd !important;
+    box-shadow: inset 0 0 12px rgba(13, 110, 253, 0.3);
+    transform: scale(1.05);
+}
+
+/* Passenger tires section */
+.passenger-section {
+    background: radial-gradient(circle at 20% 20%, rgba(111, 199, 255, 0.08), transparent 28%),
+                radial-gradient(circle at 80% 0%, rgba(255, 170, 0, 0.12), transparent 30%),
+                linear-gradient(180deg, #0b1725 0%, #0f1d2f 50%, #0a1220 100%);
+    color: #e5e7eb;
+}
+
+.passenger-hero {
+    background: linear-gradient(90deg, #f38a1f 0%, #eabf52 40%, #01b5ff 100%);
+    color: #0d1b2a;
+    letter-spacing: 0.08em;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.3);
+}
+
+.passenger-hero h2 {
+    letter-spacing: 0.18em;
+}
+
+.category-panel {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.category-label {
+    color: #0d1b2a;
+    letter-spacing: 0.16em;
+    background: #6ac7ff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.category-label.budget {
+    background: linear-gradient(135deg, #63c7ff 0%, #5cb5ff 100%);
+}
+
+.category-label.quality {
+    background: linear-gradient(135deg, #7fd3ff 0%, #72c1ff 100%);
+}
+
+.category-label.premium {
+    background: linear-gradient(135deg, #8bd8ff 0%, #7ec7ff 100%);
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.brand-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 1rem;
+    padding: 1rem;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.brand-card img {
+    max-height: 64px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+}
+
+.brand-card .brand-name {
+    color: #eaf0f7;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.brand-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.28);
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 767.98px) {
+    .passenger-hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .brand-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+}
